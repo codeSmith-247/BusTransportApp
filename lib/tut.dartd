@@ -1,0 +1,45 @@
+// ignore_for_file: unnecessary_this
+
+import 'dart:ffi';
+
+void main() {
+  dynamic firstObject =  Rectangle(60, 50);
+  dynamic secondObject =  childRect(60, 50);
+  
+  print(secondObject.area());
+}
+
+class Rectangle {
+  
+  Rectangle(this.height, this.width);
+
+  double height = 0.0;
+  double width;
+
+  double area() {
+
+    return (this.height * this.width);
+  }
+}
+
+class childRect extends Rectangle {
+  childRect(super.height, super.width);
+  @override
+  double height = 5.0;
+}
+
+
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override 
+  Widget build(BuildContext context) {
+
+    return  MaterialApp(
+      title: "Bus Transport Application",
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home:  const LoginPage(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
